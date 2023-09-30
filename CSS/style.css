@@ -166,3 +166,81 @@ section.profile .right ul.socials li:nth-child(2) a{
 section.profile .right ul.socials li:nth-child(3) a{
     background:var(--twitter);
 }
+/* About */
+section{
+    padding: 3rem;
+}
+main{
+    background: var(--primary);
+}
+.section_heading{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--pure);
+    margin-bottom: 3rem;
+    text-shadow: 0 0 1px rgba(40 , 54, 95, 0.1);
+    position: relative;
+}
+.section_heading::after{
+    content: '';
+    height: 3px;
+    width: 80px;
+    position: absolute;
+    top: 28px;
+    left: 0;
+    border-top: 1px dotted var(--github);
+}
+section.about .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16rem;  
+}
+section.about .content h2{
+    color: var(--info);
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+}
+section.about .content p{
+    color: var(--ternary);
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.1px;
+    margin-bottom: 1rem;
+}
+section.about .content .left button{
+    background: rgba(77,121,246,0.1);
+    color: var(--info);
+    padding: 4px 8px;
+    font-size: 12px;
+    border: none;
+    line-height: 24px;
+    outline: none;
+    cursor: pointer;
+}
+section.about .content .right p{
+    line-height: 1.6;
+    font-size: 14px;
+    color: var(--ternary);
+    letter-spacing: 0.1px;
+    margin-bottom: 1rem;
+}
+section.about .content .right p span:nth-child(1){
+    width: 130px;
+    float: left;
+    font-weight: 500;
+    padding-right: 10px;
+    display: block;
+    position: relative;
+}
+section.about .content .right p span:nth-child(2){
+    padding-left: 150px;
+    display: block;
+}
+section.about .content .right p span:nth-child(1)::after{
+    content: ':';
+    position: absolute;
+    right: 0;
+    top: 0;
+}
