@@ -32,10 +32,15 @@ $(document).ready(function(){
     }
     
     let counterSection = document.querySelector('.counter_section');
+    let option={
+        rootMargin : '0px 0px -200px 0px'
+    }
+    let incrementDone =0;
     const sectionObserver = new IntersectionObserver(function(entries){
-        if(entries[0].isIntersecting){
+        if(entries[0].isIntersecting && incrementDone !=1){
+            incrementDone = 1;
             runCounter();
         }
-    })
+    },option)
     sectionObserver.observe(counterSection);
 });
