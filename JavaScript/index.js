@@ -11,4 +11,31 @@ $(document).ready(function(){
         tooltip.innerText = percentage + '%';
         bar.style.width = percentage + '%';
     })
+    // counter section
+    const counter =document.querySelectorAll('.counter');
+    function runCounter(){
+        counter.forEach(counter =>{
+            counter.innerText=0;
+            let target = +counter.dataset.count;
+            let step = target /100;
+            let countIt = function(){
+                let displayCount = +counter.innerText;
+                if(displayCount < target){
+                    counter.innerText = Math.ceil(displayCount + step);
+                    setTimeout(countIt,1);
+                }else{
+                    counter.innerText = target;
+                }
+            }
+            countIt();
+        })
+    }
+    
+    let counterSection = document.querySelector('.counter_section');
+    const sectionObserver = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){
+            runCounter();
+        }
+    })
+    sectionObserver.observe(counterSection);
 });
